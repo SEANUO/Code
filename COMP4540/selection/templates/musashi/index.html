@@ -1,0 +1,257 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Yamato</title>
+    <link rel="icon"
+      type="image/png"
+      href="static/images/battleship.png">
+    <link rel="stylesheet" href="static/stylesheet/semantic.min.css">
+    <link rel="stylesheet" href="static/stylesheet/style_multiple.css">
+    <link rel="stylesheet" href="static/stylesheet/range.css">
+</head>
+<body>
+    <div id="header">
+        <nav>
+            <li>Mondrian Hybrid Prototype - Codename: Yamato</li>
+        </nav>
+    </div>
+    <div id="frame-container">
+        <div id="title-hint-text">
+            <h1 id="title-hint-content"></h1>
+        </div>
+        <div id="multiple-container">
+            <div id="multiple-list" class="ui middle relaxed selection divided list">
+            </div>
+            <div id="multiple-grid" class="ui column relaxed grid">
+            </div>
+            <div id="multiple-drive" class="ui relaxed grid">
+                <div id="drive-row-1" class="row drive-step-row">
+                    <div id="drive-column-0" class="ui segment column drive-column">
+                        <div id="drive-left-content" class="ui grid drive-column-grid">
+                            <div id="drive-left-row-1" class="drive-column-row">
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-1">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-2">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-3">
+                                </div>
+                            </div>
+                            <div id="drive-left-row-2" class="drive-column-row">
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-4">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-5">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-6">
+                                </div>
+                            </div>
+                            <div id="drive-left-row-3" class="drive-column-row">
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-7">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-8">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-9">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="drive-column-dimmer-0" class="ui inverted dimmer">
+                        </div>
+                    </div>
+                    <div id="drive-column-1" class="ui segment column drive-column">
+                        <div id="drive-mid-content" class="ui grid drive-column-grid">
+                            <div id="drive-mid-row-1" class="drive-column-row">
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-10">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-11">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-12">
+                                </div>
+                            </div>
+                            <div id="drive-mid-row-2" class="drive-column-row">
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-13">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-14">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-15">
+                                </div>
+                            </div>
+                            <div id="drive-mid-row-3" class="drive-column-row">
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-16">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-17">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-18">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="drive-column-dimmer-1" class="ui inverted dimmer">
+                        </div>
+                    </div>
+                    <div id="drive-column-2" class="ui segment column drive-column">
+                        <div id="drive-right-content" class="ui grid drive-column-grid">
+                            <div id="drive-right-row-1" class="drive-column-row">
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-19">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-20">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-21">
+                                </div>
+                            </div>
+                            <div id="drive-right-row-2" class="drive-column-row">
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-22">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-23">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-24">
+                                </div>
+                            </div>
+                            <div id="drive-right-row-3" class="drive-column-row">
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-25">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-26">
+                                </div>
+                                <div class="ui drive-size image">
+                                    <img id="drive-img-27">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="drive-column-dimmer-2" class="ui inverted dimmer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="multiple-drive-second" class="ui relaxed grid">
+                <div id="drive-row-2" class="row drive-step-row">
+                    <div id="drive-second-column-0" class="ui segment column drive-column">
+                        <div id="drive-second-container-0" class="ui grid">
+                            <div class="row drive-center-row">
+                                <img class="ui small image" id="drive-second-image-0">
+                            </div>
+                            <div class="row drive-center-row">
+                                <img class="ui small image" id="drive-second-image-1">
+                            </div>
+                            <div class="row drive-center-row">
+                                <img class="ui small image" id="drive-second-image-2">
+                            </div>
+                        </div>
+                        <div id="drive-second-column-dimmer-0" class="ui inverted dimmer">
+                        </div>
+                    </div>
+                    <div id="drive-second-column-1" class="ui segment column drive-column">
+                        <div id="drive-second-container-1" class="ui grid">
+                            <div class="row drive-center-row">
+                                <img class="ui small image" id="drive-second-image-3">
+                            </div>
+                            <div class="row drive-center-row">
+                                <img class="ui small image" id="drive-second-image-4">
+                            </div>
+                            <div class="row drive-center-row">
+                                <img class="ui small image" id="drive-second-image-5">
+                            </div>
+                        </div>
+                        <div id="drive-second-column-dimmer-1" class="ui inverted dimmer">
+                        </div>
+                    </div>
+                    <div id="drive-second-column-2" class="ui segment column drive-column">
+                        <div id="drive-second-container-2" class="ui grid">
+                            <div class="row drive-center-row">
+                                <img class="ui small image" id="drive-second-image-6">
+                            </div>
+                            <div class="row drive-center-row">
+                                <img class="ui small image" id="drive-second-image-7">
+                            </div>
+                            <div class="row drive-center-row">
+                                <img class="ui small image" id="drive-second-image-8">
+                            </div>
+                        </div>
+                        <div id="drive-second-column-dimmer-2" class="ui inverted dimmer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="multiple-kancolle">
+                <div id="multiple-kancolle-container">
+                </div>
+                <div id="multiple-kancolle-selector" class="ui inverted dimmer">
+                    <div id="multiple-kancolle-content-container" class="content">
+                        <div id="multiple-kancolle-content" class="ui relaxed horizontal selection list">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="next-button-container">
+            <div id="next-step" class="ui animated button disabled" tabindex="0">
+                <div class="visible content">Next</div>
+                <div class="hidden content">
+                    <i class="right arrow icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="footer-container">
+            <div id="experiment-progress" class="ui orange tiny progress" data-value="{{ progressValue }}" data-total="{{ progressTotal }}">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+    <div id="instruction-dimmer" class="ui page dimmer">
+        <div class="content" id="instruction-dimmer-content">
+        </div>
+    </div>
+    <div id="submit-dimmer" class="ui page dimmer">
+        <div class="ui massive text loader">
+            <p id="submit-uploading">Submitting</p>
+            <p id="submit-generating">Generating Images</p>
+            <p id="submit-downloading">Preparing New Iteration</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="static/javascript/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="static/javascript/js.cookie.js"></script>
+    <script type="text/javascript" src="static/javascript/semantic.min.js"></script>
+    <script type="text/javascript" src="static/javascript/range.js"></script>
+    <script type="text/javascript">
+    $.ajaxSetup({
+        data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+    });
+    var testList={{ testList|safe }};
+    var testTitle={{ testTitle|safe }};
+    var testHintText={{ testHintText|safe }};
+    var testScoreHintText={{ testScoreHintText|safe }};
+    var testDriveHintText={{ testDriveHintText|safe }};
+    var testDriveConfirmText={{ testDriveConfirmText|safe }};
+    var testSingleIndex={{ testSingleIndex|safe }};
+    var testUIIndex={{ testUIIndex|safe }};
+    var testIteration={{ testIteration|safe }};
+    var uid='{{ uid|safe }}';
+    var imageGene={{ imageGene|safe }};
+    </script>
+    <script type="text/javascript" src="static/javascript/script_multiple.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Akatsuki</title>
+    <link rel="icon"
+      type="image/png"
+      href="static/images/destoryer.png">
+    <link rel="stylesheet" href="static/stylesheet/semantic.min.css">
+    <link rel="stylesheet" href="static/stylesheet/style.css">
+    <link rel="stylesheet" href="static/stylesheet/range.css">
+</head>
+<body>
+    <div id="header">
+        <nav>
+            <li>Mondrian Selection Prototype III - Codename: Akatsuki</li>
+        </nav>
+    </div>
+    <div id="frame-container">
+        <div id="frame-cell" class="ui grid container">
+            <div id="obvserve-item-row" class="row centered">
+                <img class="ui centered medium image" id="obvserve-item">
+            </div>
+            <div id="hint-text-row" class="row centered">
+                <h1 id="hint-text"></h1>
+            </div>
+            <div id="widget-container-row" class="row centered">
+                <button class="ui toggle button" id="rating-widget-boolean"><i class="heart icon"></i>Like</button>
+                <div class="ui buttons" id="rating-widget-boolean-group">
+                    <div id="rating-group-button-like" class="ui button"><i class="thumbs up icon"></i>Like</div>
+                    <div class="or"></div>
+                    <div id="rating-group-button-dislike" class="ui button"><i class="thumbs down icon"></i>Dislike</div>
+                </div>
+                <div class="ui form" id="rating-widget-integer-radio">
+                    <div id="radio-field" class="inline fields">
+                    </div>
+                </div>
+                <div class="ui large heart rating" id="rating-widget-integer" data-rating="5" data-max-rating="10"></div>
+                <div class="ui green range" id="rating-widget-slider"></div>
+                <div class="ui indicating progress" id="reading-count-down" data-value="1" data-total="2">
+                <div class="bar"></div>
+                </div>
+            </div>
+            <div class="row centered" id="rating-label-row">
+                <div id="rating-label">
+                    <div id="rating-label-left"></div>
+                    <div id="rating-label-mid"></div>
+                    <div id="rating-label-right"></div>
+                </div>
+            </div>
+            <div class="row centered" id="next-button-row">
+                <div class="ui animated button" id="next-image" tabindex="0">
+                    <div class="visible content">Next</div>
+                    <div class="hidden content">
+                        <i class="right arrow icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="experiment-progress" class="ui orange tiny progress">
+            <div class="bar"></div>
+        </div>
+    </div>
+    <div id="instruction-dimmer" class="ui page dimmer">
+        <div class="content" id="instruction-dimmer-content">
+            <div id="instruction-content" class="center">
+                <h1 id="instruction-title"></h1>
+                <p id="instruction-text"></p>
+                <div class="ui animated black button" id="start-experiment" tabindex="0">
+                    <div class="visible content">Start</div>
+                    <div class="hidden content">
+                        <i class="right arrow icon"></i>
+                    </div>
+                </div>
+                <div id="start-loading" class="ui active centered inline loader"></div>
+            </div>
+        </div>
+    </div>
+    <div id="submit-dimmer" class="ui page dimmer">
+        <div class="ui massive text loader">
+            <p id="submit-uploading">Submitting</p>
+            <p id="submit-generating">Generating Images</p>
+            <p id="submit-downloading">Preparing New Iteration</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="static/javascript/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="static/javascript/js.cookie.js"></script>
+    <script type="text/javascript" src="static/javascript/semantic.min.js"></script>
+    <script type="text/javascript" src="static/javascript/range.js"></script>
+    <script type="text/javascript">
+    function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain ) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+        //data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+    });
+    var testHintText={{ testHintText|safe }};
+    var testImage={{ testImage|safe }};
+    var testList={{ testList|safe }};
+    var testLabel={{ testLabel|safe }};
+    var testRadioMaximum={{ testRadioMaximum|safe }};
+    var testInstructionTitle={{ testInstructionTitle|safe }};
+    var testInstructionText={{ testInstructionText|safe }};
+    var imageGene={{ imageGene|safe }};
+//    var ed = [];
+//    EyeTribe.loop(function(frame){
+//        ed.push(frame.dump());
+//    });
+//
+//    $("#next-button-row").click(function(){
+//         $.ajax({
+//            url:"http://" +location.host +"/send_eyetribe",
+//            type:"POST",
+//            datatype:"json",
+//            data:JSON.stringify(ed),
+           // error: function(response) {},
+
+//            success:function(){
+//                if Response.state == true{
+//                    alert("data storation success");
+//                }else{
+//                    alert("data storation failed");
+//                }
+//            }
+            //alert("data storation success");
+ //       });
+        //alert("data storation success");
+//    });
+    </script>
+    <script type="text/javascript" src="static/javascript/script.js"></script>
+</body>
+</html>

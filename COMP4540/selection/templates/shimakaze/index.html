@@ -1,0 +1,165 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Shimakaze</title>
+    <link rel="icon"
+      type="image/png"
+      href="static/images/destoryer.png">
+    <link rel="stylesheet" href="static/stylesheet/semantic.min.css">
+    <link rel="stylesheet" href="static/stylesheet/style_question.css">
+    <link rel="stylesheet" href="static/stylesheet/range.css">
+</head>
+<body>
+    <div id="header">
+        <nav>
+            <li>Mondrian Question Prototype - Codename: Shimakaze</li>
+        </nav>
+    </div>
+    <div id="frame-container">
+        <div class="one-filler"></div>
+        <div id="queation-area" class="ui grid row centered">
+            <div class="row">
+                <h1 id="question-text"></h1>
+            </div>
+            <div class="row">
+                <p id="question-explain"></p>
+            </div>
+        </div>
+        <div class="content-filler"></div>
+        <div id="answer-area" class="ui grid row centered">
+            <div class="row centered">
+                <div id="answer-line-text" class="ui input">
+                    <input id="answer-line-text-input" placeholder="" type="text">
+                </div>
+                <p id="answer-range-data">
+                    <span id="answer-range-label"></span>
+                    <span id="answer-range-value"></span>
+                </p>
+                <div id="answer-range" class="ui range"></div>
+                <div id="answer-combo" class="ui fluid selection dropdown">
+                    <i class="dropdown icon"></i>
+                    <div id="answer-combo-default-text" class="default text"></div>
+                    <div id="answer-combo-menu" class="menu">
+                    </div>
+                </div>
+                <div id="answer-search-combo" class="ui fluid search selection dropdown">
+                    <i class="dropdown icon"></i>
+                    <div id="answer-search-combo-default-text" class="default text"></div>
+                    <div id="answer-search-combo-menu" class="menu">
+                    </div>
+                </div>
+                <div id="answer-radio-list" class="ui form">
+                    <div id="answer-radio-list-area" class="grouped fields">
+                    </div>
+                </div>
+                <div id="answer-checkbox-list" class="ui form">
+                    <div id="answer-checkbox-list-area" class="grouped fields">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="next-button-area" class="ui grid row centered">
+            <div class="row centered">
+                <div id="next-button" class="ui animated button" tabindex="0">
+                    <div class="visible content">Next</div>
+                    <div class="hidden content">
+                        <i class="right arrow icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="one-filler"></div>
+    </div>
+    <div id="instruction-dimmer" class="ui page dimmer">
+        <div class="content" id="instruction-dimmer-content">
+            <div id="instruction-content" class="center">
+                <h1 id="instruction-title"></h1>
+                <p id="instruction-text"></p>
+                <div class="ui animated black button" id="start-experiment" tabindex="0">
+                    <div class="visible content">Start</div>
+                    <div class="hidden content">
+                        <i class="right arrow icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="experiment-progress" class="ui orange tiny progress">
+            <div class="bar"></div>
+        </div>
+    </div>
+    <div id="submit-dimmer" class="ui page dimmer">
+        <div class="ui massive text loader">
+            <p id="submit-uploading">Submitting</p>
+            <p id="submit-preparing">Preparing Initial Iteration</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="static/javascript/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="static/javascript/js.cookie.js"></script>
+    <script type="text/javascript" src="static/javascript/semantic.min.js"></script>
+    <script type="text/javascript" src="static/javascript/range.js"></script>
+    <script type="text/javascript">
+    function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain ) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+        //data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+    });
+    var questionInstructionTitle={{ questionInstructionTitle|safe }};
+    var questionInstructionText={{ questionInstructionText|safe }};
+    var questionTypes={{ questionTypes|safe }};
+    var questionTexts={{ questionTexts|safe }};
+    var questionExplains={{ questionExplains|safe }};
+    var questionSettings={{ questionSettings|safe }};
+//    var ed = [];
+//    EyeTribe.loop(function(frame){
+//        ed.push(frame.dump());
+  //  });
+
+//    $("#next-button-area").click(function(){
+    //    $.ajax({
+        //    url:"http://" +location.host +"/send_eyetribe",
+        //    type:"POST",
+        //    datatype:"json",
+        //    data:JSON.stringify(ed),
+        //    error: function(response) {},
+
+      //      success:function(){
+           //     if Response.state == true{
+             //       alert("data storation success");
+             //   }
+               // }else{
+                 //   alert("data storation failed");
+                //}
+        //    }
+            //alert("data storation success");
+    //    });
+    //});
+    </script>
+    <script type="text/javascript" src="static/javascript/script_question.js"></script>
+</body>
+</html>
